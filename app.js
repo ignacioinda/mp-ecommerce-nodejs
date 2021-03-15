@@ -36,8 +36,11 @@ app.get('/failure', (req, res)=> res.render('failure', req.query));
 app.get('/success', (req, res)=> res.render('success', req.query));
 
 app.post('/notifications', (request, response) => {
-
-    console.log('*** webhook *** -->> ', request.body);
+    console.log('----------- webhook -----------');
+    console.log(request.query);
+    console.log(request.body);
+    console.log('----------- webhook -----------');
+    response.sendStatus(200);
     response.send(request.body);
 });
 
