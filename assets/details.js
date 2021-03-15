@@ -50,7 +50,6 @@ let preference = {
 }
 
 const payment = ()=>{
-    //console.log(preference);
     fetch('https://mpmercadolibre.herokuapp.com/checkout', {
         method: 'post',
         body: JSON.stringify(preference),
@@ -59,7 +58,6 @@ const payment = ()=>{
         }
     }).then(res => res.json()).then(payment => {
         console.log(payment);
-        //window.open(payment.init_point);
         window.open(payment.init_point,'_self');
     });
 }
