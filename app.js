@@ -37,11 +37,11 @@ app.get('/success', (req, res)=> res.render('success', req.query));
 
 app.post('/notifications', (request, response) => {
     console.log('----------- webhook -----------');
-    console.log(request.query);
     console.log(request.body);
     console.log('----------- webhook -----------');
-    response.sendStatus(200);
     response.send(request.body);
+    response.status(200).end() // Responding is important
+
 });
 
 app.post('/checkout', (request, response) =>{
