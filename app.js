@@ -36,17 +36,10 @@ app.get('/failure', (req, res)=> res.render('failure', req.query));
 app.get('/success', (req, res)=> res.render('success', req.query));
 
 app.post('/notifications', (request, response) => {
-    //const data = request.body;
-    /*mercadopago.ipn.manage(request.body)
-    .then(data => response.send(data))
-    .then((error) => console.log(error));*/
-    console.log(request.body);
+
+    console.log('*** webhook *** -->> ', request.body);
     response.send(request.body);
 });
-/*Ejemplo: Si configuraste la notification_url: 
-https://www.yoursite.com/notifications, 
-recibirás notificaciones de pago de esta manera: 
-https://www.yoursite.com/notifications?topic=payment&id=123456789 */
 
 app.post('/checkout', (request, response) =>{
     const preference = request.body;
@@ -54,7 +47,7 @@ app.post('/checkout', (request, response) =>{
     mercadopago.preferences.create(preference)
     .then(res => {
         global.id = res.body.id;
-        console.log(res.body);
+        //console.log(res.body);
         response.send(res.body);
     });
 });

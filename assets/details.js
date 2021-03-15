@@ -57,7 +57,7 @@ const payment = ()=>{
             'Content-Type': 'application/json'
         }
     }).then(res => res.json()).then(payment => {
-        console.log(payment);
+        //console.log(payment);
         window.open(payment.init_point,'_self');
     });
 }
