@@ -33,6 +33,7 @@ app.get('/', (req, res)=> res.render('home'));
 app.get('/detail', (req, res)=> res.render('detail', req.query));
 app.get('/pending', (req, res)=> res.render('pending', req.query));
 app.get('/failure', (req, res)=> res.render('failure', req.query));
+app.get('/success', (req, res)=> res.render('success', req.query));
 
 app.post('/notifications', (request, response) => {
     //const data = request.body;

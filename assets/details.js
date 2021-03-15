@@ -7,7 +7,7 @@ let preference = {
         title: document.getElementById('title').innerHTML,
         description: 'Dispositivo móvil de Tienda e-commerce',
         picture_url: document.getElementById('image').src,
-        quantity: parseInt(document.getElementById('unit').innerHTML),
+        quantity: 1,
         currency_id : 'ARS',
         unit_price: parseFloat(document.getElementById('price').innerHTML),
       }
@@ -27,7 +27,7 @@ let preference = {
         }
     },
     back_urls: {
-        success: 'https://mpmercadolibre.herokuapp.com/',
+        success: 'https://mpmercadolibre.herokuapp.com/success',
         failure: 'https://mpmercadolibre.herokuapp.com/failure',
         pending: 'https://mpmercadolibre.herokuapp.com/pending'
     },
@@ -63,6 +63,7 @@ const payment = ()=>{
         window.open(payment.init_point,'_self');
     });
 }
+
 
 
 btnPayment.onclick = payment;

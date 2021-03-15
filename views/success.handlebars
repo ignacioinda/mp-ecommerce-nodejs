@@ -18,8 +18,27 @@
     <div class="as-search-results as-filter-open as-category-landing as-desktop" id="as-search-results">
 
         <div id="accessories-tab" class="as-accessories-details">
-            <h1>Pago pendiente</h1>
+            <h1>collection_id: {{collection_id}}</h1>
+            <h1>preference_id: {{preference_id}}</h1>
+            <h1>payment_id: {{payment_id}}</h1>
+            <h1>external_reference: {{external_reference}}</h1>
         </div>
     </div>
 </div>
-<script src="https://www.mercadopago.com/v2/security.js" view="search"></script>
+
+
+<script type="text/javascript">
+function getVariableGetByName() {
+   var variables = {};
+   var arreglos = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      variables[key] = value;
+   });
+   return variables;
+}
+var collection_id = getVariableGetByName()["collection_id"];
+var preference_id = getVariableGetByName()["preference_id"];
+var payment_id = getVariableGetByName()["payment_id"];
+var external_reference = getVariableGetByName()["external_reference"];
+</script>
+
+<script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
