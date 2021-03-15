@@ -42,8 +42,8 @@ app.get('/success', (req, res)=> res.render('success', req.query));
 
 app.post('/notifications', (request, response) => {
     console.log('----------- webhook -----------');
-    console.log('BODY : ', JSON.stringify(req.body));
-    console.log(req.query);
+    console.log('BODY : ', JSON.stringify(request.body));
+    console.log(request.query);
     console.log('----------- webhook -----------');
     response.send(request.body);
     response.status(200).end() // Responding is important
