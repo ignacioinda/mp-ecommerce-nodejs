@@ -3,8 +3,7 @@ var exphbs  = require('express-handlebars');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+
 
 
 
@@ -23,8 +22,10 @@ var app = express();
 
 app.use(cors());
 
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
- 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
